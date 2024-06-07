@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <h1>Tucson satellite viewings</h1>
+    {% for sat in sat_info %}
+    <h3>{{sat[0][1]}}</h3>
+    <ul>
+        {% for s in sat %}
+        <li>{{s[0]+" "+s[2]+" "+s[3]}}</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+    
+</body>
+</html>
