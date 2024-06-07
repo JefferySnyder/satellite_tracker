@@ -6,3 +6,6 @@ Using the Python library, Skyfield, as well as Celestrack's satellites API, I cr
 Currently, the location is only set for Tucson, AZ, but the coordinates can easily be changed and I may implement a dynamic settings option in the future.
 I've used Flask as a quick way to set up the webpage as well as Bootstrap for some simple stylings.
 The list, which is set from earliest to latest showings, inludes the satellite's name and the time of rising, culmination, and setting for each. The data also shows whether the satellite will be in the Earth's shadow or not, making it more difficult to be seen.
+
+### Example Image
+![image](https://github.com/JefferySnyder/satellite_tracker/assets/89660291/91a7bccd-76a6-47bf-bd22-60fbad3bc3dc)
