@@ -26,12 +26,13 @@ def get_sat_info():
     t0 = ts.utc(t.utc.year, t.utc.month, t.utc.day, t.utc.hour - 7)
     t1 = ts.utc(t.utc.year, t.utc.month, t.utc.day + 1, t.utc.hour-7)
 
+    event_names = ['rise above 30°', 'culminate', 'set below 30°']
+
     res = []
     everyThree = []
 
     for satellite in satellites:
         t, events = satellite.find_events(tucson, t0, t1, altitude_degrees=30.0)
-        event_names = 'rise above 30°', 'culminate', 'set below 30°'
 
         eph = load('de421.bsp')
         sunlit = satellite.at(t).is_sunlit(eph)
@@ -45,9 +46,9 @@ def get_sat_info():
                 everyThree.append(
                     [ti.utc_strftime('%Y %b %d at %H:%M:%S'), satellite.name, event_name, state]
                 )
-            if len(everyThree) == 3:
-                res.append(everyThree)
-                everyThree = []
+        if everyThree:
+            res.append(everyThree)
+            everyThree = []
     
 
     res.sort()
